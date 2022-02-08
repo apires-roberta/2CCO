@@ -14,6 +14,7 @@ public class Vendedor extends Funcionario{
 
     public Vendedor(String cpf, String nome, Double vendas, Double taxa) {
         super(cpf, nome);
+
         this.vendas = vendas;
         this.taxa = taxa;
     }
