@@ -1,4 +1,4 @@
-package com.sptech.projeto2;
+  package com.sptech.projeto2;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,7 +36,13 @@ public class Pontuacao {
     @GetMapping("/pontuacao")
     public String potuacao() {
         pontos = vitoria + empate;
-        return String.format("Ola você tem %d pontos e %d partidas", pontos, partidas);
+        if(partidas < 1){
+            return String.format("Você não jogou nenhuma partida");
+        }else {
+            Integer max = partidas * 3;
+            Integer aprov = (pontos * 100) / max;
+            return String.format("Ola você tem %d pontos e %d partidas - Aproveitamento: %d ", pontos, partidas, aprov);
+        }
     }
 
     @GetMapping("/resetar")
