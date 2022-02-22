@@ -16,7 +16,7 @@ public class main {
 
         controleBonus.exibeItensLista();
 
-        System.out.println(controleBonus.calculoTotalBonus());
+        System.out.println("Total de bônus: " + controleBonus.calculoTotalBonus());
 
 
     }

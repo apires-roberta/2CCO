@@ -1,13 +1,12 @@
-public class Coordenador implements Bonus {
+public class Coordenador extends Professor {
 
     //Atributos
-    private String nome;
     private int qtdHoraCoordSem;
     private Double valorHoraCoord;
 
     //Construtor
-    public Coordenador(String nome, int qtdHoraCoordSem, Double valorHoraCoord) {
-        this.nome = nome;
+    public Coordenador(String nome, int qtdAulasSem, Double valorHoraAula, int qtdHoraCoordSem, Double valorHoraCoord) {
+        super(nome, qtdAulasSem, valorHoraAula);
         this.qtdHoraCoordSem = qtdHoraCoordSem;
         this.valorHoraCoord = valorHoraCoord;
     }
@@ -15,24 +14,15 @@ public class Coordenador implements Bonus {
     //Metodos
     @Override
     public Double getValorBonus() {
-        return (qtdHoraCoordSem * valorHoraCoord) * (4.5 * 0.2);
+        return super.getValorBonus() + qtdHoraCoordSem * valorHoraCoord * 4.5 * 0.2;
     }
 
     @Override
     public String toString() {
         return "Coordenador{" +
-                "nome='" + nome + '\'' +
-                ", qtdHoraCoordSem=" + qtdHoraCoordSem +
+                "qtdHoraCoordSem=" + qtdHoraCoordSem +
                 ", valorHoraCoord=" + valorHoraCoord +
                 '}';
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
     public int getQtdHoraCoordSem() {

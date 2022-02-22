@@ -3,19 +3,19 @@ public class Professor implements Bonus{
     //Atributos
     private String nome;
     private int qtdAulasSem;
-    private Double qtdValorAula;
+    private Double valorHoraAula;
 
     //Construtor
-    public Professor(String nome, int qtdAulasSem, Double qtdValorAula) {
+    public Professor(String nome, int qtdAulasSem, Double valorHoraAula) {
         this.nome = nome;
         this.qtdAulasSem = qtdAulasSem;
-        this.qtdValorAula = qtdValorAula;
+        this.valorHoraAula = valorHoraAula;
     }
 
     //Metodos
     @Override
     public Double getValorBonus() {
-        return (qtdAulasSem * qtdValorAula) * (4.5 * 0.15);
+        return (qtdAulasSem * valorHoraAula) * (4.5 * 0.15);
     }
 
     @Override
@@ -23,7 +23,7 @@ public class Professor implements Bonus{
         return "Professor{" +
                 "nome='" + nome + '\'' +
                 ", qtdAulasSem=" + qtdAulasSem +
-                ", qtdValorAula=" + qtdValorAula +
+                ", valorHoraAula=" + valorHoraAula +
                 '}';
     }
 
@@ -43,11 +43,11 @@ public class Professor implements Bonus{
         this.qtdAulasSem = qtdAulasSem;
     }
 
-    public Double getQtdValorAula() {
-        return qtdValorAula;
+    public Double getValorHoraAula() {
+        return valorHoraAula;
     }
 
-    public void setQtdValorAula(Double qtdValorAula) {
-        this.qtdValorAula = qtdValorAula;
+    public void setValorHoraAula(Double valorHoraAula) {
+        this.valorHoraAula = valorHoraAula;
     }
 }

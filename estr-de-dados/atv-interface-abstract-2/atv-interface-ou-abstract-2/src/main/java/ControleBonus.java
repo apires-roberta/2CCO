@@ -5,16 +5,16 @@ public class ControleBonus {
 
     List<Bonus> Controle = new ArrayList<>();
 
-    public ControleBonus(List<Bonus> controleBonus) {
-        Controle = controleBonus;
+    public ControleBonus(List<Bonus> controle) {
+        Controle = controle;
     }
 
-    public void adicionaBonus(Bonus b){
+    public void adicionarBonus(Bonus b){
         Controle.add(b);
     }
 
     public void exibeItensLista(){
-        for (Bonus b : Controle){
+        for(Bonus b : Controle){
             System.out.println(b);
         }
     }
@@ -25,12 +25,5 @@ public class ControleBonus {
             valor += b.getValorBonus();
         }
         return valor;
-    }
-
-    @Override
-    public String toString() {
-        return "ControleBonus{" +
-                "ControleBonus=" + Controle +
-                '}';
     }
 }
