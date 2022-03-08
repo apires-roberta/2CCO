@@ -16,11 +16,12 @@ public class PokemonController {
 
     @GetMapping
     public Pokemon obj(){
-        Pokemon pokemon = new Pokemon()
+        Pokemon pokemon = new Pokemon();
 
     }
 
     @GetMapping("/cadastrar/{nome}/{tipo}/{forca}/{capturado}")
+    public void
 
 
 }
