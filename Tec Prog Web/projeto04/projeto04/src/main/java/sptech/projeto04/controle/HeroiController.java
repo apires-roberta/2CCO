@@ -26,10 +26,10 @@ public class HeroiController {
 
     @GetMapping("/{indice}")
     public String getHeroi(@PathVariable int indice) {
-        if (indice>herois.size()) {
+        if (indice>herois.size()-1) {
             return "Heroi nao encontrado";
         } else {
-            return "Heroi encontrado" + herois.get(indice);
+            return "Heroi encontrado " + herois.get(indice).getNome();
         }
     }
 
@@ -37,7 +37,7 @@ public class HeroiController {
     public String attHeroi(@PathVariable int indice,
                            @RequestBody Heroi heroiAtt) {
         herois.set(indice, heroiAtt);
-        if (indice>herois.size()) {
+        if (indice>herois.size()-1) {
             return "Heroi nao encontrado";
         } else {
             return "Heroi atualizado com sucesso";
@@ -47,7 +47,7 @@ public class HeroiController {
     @DeleteMapping("/{indice}")
     public String delHeroi(@PathVariable int indice) {
         herois.remove(indice);
-        if (indice>herois.size()) {
+        if (indice>herois.size()-1) {
             return "Heroi nao encontrado";
         } else {
             return "Heroi deletado!";
