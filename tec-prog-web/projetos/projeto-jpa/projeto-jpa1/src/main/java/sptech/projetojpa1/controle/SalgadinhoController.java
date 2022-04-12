@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import sptech.projetojpa1.entidade.Salgadinho;
 import sptech.projetojpa1.repositorio.SalgadinhoRepository;
+import sptech.projetojpa1.resposta.SalgadinhoSimplesResposta;
 
 import java.util.List;
 import java.util.Optional;
@@ -78,4 +79,30 @@ public class SalgadinhoController {
         }
         return ResponseEntity.status(404).build();
     }
+
+    @GetMapping("/contagem")
+    public ResponseEntity getCOntagem(){
+        long contagem = repository.count();
+        return ResponseEntity.status(200).body(contagem);
+    }
+
+    @GetMapping("/simples")
+    public ResponseEntity getSimples(){
+        List<SalgadinhoSimplesResposta> lista = repository.listaSimples();
+        //ignorando a situação de lista vazia
+        return ResponseEntity.status(200).body(lista);
+    }
+
+    @PatchMapping("/{codigo}/preco/{novoPreco}")
+    public ResponseEntity patchSalagadinho(
+            @PathVariable Integer codigo,
+            @PathVariable Double novoPreco){
+        if(repository.existsById(codigo)) {
+            repository.atualizarPreco(codigo, novoPreco);
+            return ResponseEntity.status(200).build();
+        }
+        return ResponseEntity.status(404).build();
+    }
+
+
 }
