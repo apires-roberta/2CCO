@@ -1,0 +1,9 @@
+00NOTA2022125-04-2022 19:44:2101
+00NOTA2022125-04-2022 19:44:4801
+02CCO  02211000Abner Nunes                                       Cáculo Computacional                    09,50005
+02REDES02211001Roberta Pires                                     Cloud                                   09,50005
+02CCO  02211002Paula Pires                                       Programação Java                        10,50002
+02CCO  02211003João Nunes                                        Design de Interação                     02,50004
+02ADS  02211004Maria Aparecida                                   Programação App                         08,50005
+02ADS  02211005Clodoaldo Pires                                   Sistemas Operacionais                   09,50005
+010000000006
